@@ -16,7 +16,7 @@ Urządzenie(config-if-range)# no lldp receive
 ```
 
 ### 🔹 Polecenie 5
-**Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.
+**Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.**
 
 Konfigurację należy wykonać na przełącznikach SW1 oraz SW2.
 
@@ -32,7 +32,7 @@ Urządzenie(config-if-range)# spanning-tree portfast
 ```
 
 ### 🔹 Polecenie 6
-**Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony
+**Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony**
 
 ```
 Urządzenie(config)# enable secret [haslo]
@@ -41,11 +41,11 @@ Urządzenie(config-line)# password [haslo]
 Urządzenie(config-line)# login
 Urządzenie(config)# banner motd "Nieautoryzowany dostep"
 ```
-
-Polecenie 7 - Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.
+### 🔹 Polecenie 7
+**Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.**
 
 ```
-Urządzenie(config)# interface range fa0/1-4
+Urządzenie(config)# interface range (nieuzywane)
 Urządzenie(config-if-range)# switchport mode access
 Urządzenie(config-if-range)# switchport port-security
 Urządzenie(config-if-range)# switchport port-security maximum 1
