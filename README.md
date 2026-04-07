@@ -19,3 +19,14 @@ i na portach
 SW(config)# interface range f0/1-3
 SW(config-if-range)# spanning-tree portfast
 ```
+
+Polecenie 6 - Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony
+Przykład:
+```
+###Przykład:
+Urządzenie(config)# enable secret [twoje_hasło]
+Urządzenie(config)# line con 0
+Urządzenie(config-line)# password [twoje_hasło]
+Urządzenie(config-line)# login
+Urządzenie(config)# banner motd "Nieautoryzowany dostep zabroniony"
+```
