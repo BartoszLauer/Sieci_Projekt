@@ -186,10 +186,20 @@ SW3(config-if-range)#switchport trunk native vlan 99
 ---
 
 
-## Polecenie 9
-
+## Polecenie 9 Zabezpiecz wszystkie linie VTY na przełącznikach i uruchom na urządzeniach możliwość zdalnego dostępu przez SSH.
+**Na SW1, SW2, SW3, R1, R2, R3**
 ```bash
+SW1(config)#ip domain-name ajp.domain.pl
+SW1(config)#crypto key generate rsa (wpisujmey tutaj 1024)
+SW1(config)#username admin secret admin
+SW1(config)#line vty 0 15
+SW1(config-line)#transport input ssh
+SW1(config-line)#login local
+SW1(config-line)#exit
+SW1(config-line)#ip ssh version 2 
 ```
+
+nie zrobilem jeszcze na routerach tylko na 3 switach (na routerach line vty 0 4)
 
 ## Polecenie 10
 
