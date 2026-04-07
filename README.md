@@ -1,15 +1,22 @@
-## Dokumentacja Prac Projektu Sieci LAN
+## 📘 Dokumentacja Prac Projektu Sieci LAN
 
-Polecenie 4 - Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
+---
 
-Trzeba to zrobic na urzadzeniach SW1 i SW2 (tego jestem pewien) (wydaje mi sie ze na SW3 NIE TRZEBA) a jezeli chodzi o routery to musze to przemyslec na ktore trzeba 
-```
+### 🔹 Polecenie 4  
+**Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam, gdzie jest to konieczne.**
+
+Konfigurację należy wykonać na przełącznikach **SW1** oraz **SW2**  
+(SW3 – brak konieczności konfiguracji w tym zakresie).
+
+#### 🔧 Konfiguracja:
+```bash
 Urządzenie(config)# no cdp run
 Urządzenie(config)# lldp run
 Urządzenie(config)# interface range f0/1-3
 Urządzenie(config-if-range)# no lldp transmit
 Urządzenie(config-if-range)# no lldp receive
 ```
+
 Polecenie 5 - Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.
 
 Na SW1 i SW2
