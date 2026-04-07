@@ -1,4 +1,4 @@
-## Dokumentacja Prac Projektu Sieci LAN
+## Tabela Adresacji
 
 | Urządzenie | Interfejs | Adres IP | Maska | Brama domyślna | Opis / VLAN |
 | :--- | :--- | :--- | :--- | :--- | :--- |
