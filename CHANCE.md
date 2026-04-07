@@ -55,4 +55,17 @@ R3(config-if)#no lldp receive
 
 ## Polecenie 5 Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.
 
+Na przełacznikach (SW1, SW2, SW3)
+```
+(config)#spanning-tree mode rapid-pvst 
+```
+
+Na przełacznikach(SW1 porty 1-4 i na SW2 porty 1-3)
+```
+SW1(config)#interface range fa0/1-4
+SW1(config-if-range)#spanning-tree portfast
+
+SW2(config)#interface range fa0/1-3
+SW2(config-if-range)#spanning-tree portfast 
+```
 
