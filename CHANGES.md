@@ -1,30 +1,5 @@
 # 🛠️ Aktulny Konfiguracja sieci (co zostalo zrobione)
 
----
-
-## 🔧 Naprawa R2 + Router-on-a-Stick
-
-```bash
-R2(config)#interface Gig0/0
-R2(config-if)#no shutdown
-
-R2(config)#interface Gig0/0.10
-R2(config-subif)#encapsulation dot1Q 10
-R2(config-subif)#ip address 172.16.10.1 255.255.255.0
-
-R2(config)#interface Gig0/0.20
-R2(config-subif)#encapsulation dot1Q 20
-R2(config-subif)#ip address 172.16.20.1 255.255.255.0
-
-R2(config)#interface Gig0/0.30
-R2(config-subif)#encapsulation dot1Q 30
-R2(config-subif)#ip address 172.16.30.1 255.255.255.0
-```
-
-💡 *Router obsługuje wiele VLAN-ów przez jeden interfejs fizyczny.*
-
----
-
 **Trunk na SW3**
 
 ```bash
@@ -206,9 +181,23 @@ nie zrobilem jeszcze na routerach tylko na 3 switach (na routerach line vty 0 4)
 ```bash
 ```
 
-## Polecenie 11
+## Polecenie 11 - Na routerze podłączonym do przełącznika uruchom Inter VLAN Routing.
 
 ```bash
+R2(config)#interface Gig0/0
+R2(config-if)#no shutdown
+
+R2(config)#interface Gig0/0.10
+R2(config-subif)#encapsulation dot1Q 10
+R2(config-subif)#ip address 172.16.10.1 255.255.255.0
+
+R2(config)#interface Gig0/0.20
+R2(config-subif)#encapsulation dot1Q 20
+R2(config-subif)#ip address 172.16.20.1 255.255.255.0
+
+R2(config)#interface Gig0/0.30
+R2(config-subif)#encapsulation dot1Q 30
+R2(config-subif)#ip address 172.16.30.1 255.255.255.0
 ```
 
 ## Polecenie 12
@@ -216,9 +205,26 @@ nie zrobilem jeszcze na routerach tylko na 3 switach (na routerach line vty 0 4)
 ```bash
 ```
 
-## Polecenie 13
+## Polecenie 13 - Na zaznaczonym w topologii sieci routerze (DHCP) uruchom serwer DHCP dla wszystkich sieci VLAN
 
+**R1_DHCP**
 ```bash
+R1_DHCP(config)#ip dhcp excluded-address 172.16.10.1
+R1_DHCP(config)#ip dhcp excluded-address 172.16.20.1
+R1_DHCP(config)#ip dhcp excluded-address 172.16.30.1
+
+R1_DHCP(config)#ip dhcp pool VLAN10
+R1_DHCP(dhcp-config)#network 172.16.10.0 255.255.255.0
+R1_DHCP(dhcp-config)#default-router 172.16.10.1
+
+R1_DHCP(config)#ip dhcp pool VLAN20
+R1_DHCP(dhcp-config)# network 172.16.20.0 255.255.255.0
+R1_DHCP(dhcp-config)# default-router 172.16.20.1
+
+
+R1_DHCP(config)#ip dhcp pool VLAN30
+R1_DHCP(dhcp-config)# network 172.16.30.0 255.255.255.0
+R1_DHCP(dhcp-config)# default-router 172.16.30.1
 ```
 
 ## Polecenie 14
