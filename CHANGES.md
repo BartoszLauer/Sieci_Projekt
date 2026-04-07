@@ -83,6 +83,21 @@ zrobic potem
 SW1(config)#vtp mode server
 SW1(config)#vtp domain ajp.domain.pl
 SW1(config)#vtp password cisco
+SW1(config)#interface range gig0/1-2 
+SW1(config-if-range)#switchport mode trunk 
+SW1(config-if-range)#switchport trunk native vlan 99
+```
+
+```
+SW2(config)#vtp mode client
+SW2(config)#vtp domain ajp.domain.pl
+SW2(config)#vtp password cisco
+SW2(config)#interface range gig0/1-2 
+SW2(config-if-range)#switchport mode trunk 
+SW2(config-if-range)#switchport trunk native vlan 99
+```
+
+```
 
 ```
 ## Polecenie 9
