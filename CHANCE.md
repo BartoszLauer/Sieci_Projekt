@@ -51,3 +51,8 @@ R3(config)#interface gig0/1
 R3(config-if)#no lldp transmit 
 R3(config-if)#no lldp receive 
 ```
+
+
+## Polecenie 5 Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.
+
+
