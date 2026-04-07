@@ -25,7 +25,7 @@ R2(config-subif)#ip address 172.16.30.1 255.255.255.0
 
 ---
 
-## Trunk na SW3
+**Trunk na SW3**
 
 ```bash
 Switch(config)#interface Gig0/1
@@ -34,7 +34,7 @@ Switch(config-if)#switchport mode trunk
 
 ---
 
-# Polecenie 4 Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
+## Polecenie 4 Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
 
 **CDP OFF / LLDP ON (wszystkie urządzenia)**
 
@@ -47,7 +47,7 @@ NazwaUrzadniea(config)#lldp run
 
 **Wyłączenie LLDP na portach użytkowników**
 
-### SW1
+**SW1**
 
 ```bash
 SW1(config)#interface range fa0/1-4
@@ -55,7 +55,7 @@ SW1(config-if-range)#no lldp transmit
 SW1(config-if-range)#no lldp receive
 ```
 
-### SW2
+**SW2**
 
 ```bash
 SW2(config)#interface range fa0/1-3
@@ -63,7 +63,7 @@ SW2(config-if-range)#no lldp transmit
 SW2(config-if-range)#no lldp receive
 ```
 
-### R3
+**R3**
 
 ```bash
 R3(config)#interface gig0/1
@@ -73,7 +73,7 @@ R3(config-if)#no lldp receive
 
 ---
 
-# Polecenie 5 — Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast
+## Polecenie 5 — Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast
 
 **Włączenie RSTP**
 
@@ -99,16 +99,16 @@ SW2(config-if-range)#spanning-tree portfast
 
 ---
 
-# Polecenie 6 — Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostępzabroniony
+## Polecenie 6 — Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostępzabroniony
 
 ```bash
 nic
 ```
 
 
-# Polecenie 7 — Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz nawszystkich przełącznikach.
+## Polecenie 7 — Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz nawszystkich przełącznikach.
 
-## SW1
+**SW1**
 
 ```bash
 SW1(config)#interface range fa0/1 - 4
@@ -124,7 +124,7 @@ SW1(config-if-range)#shutdown
 
 ---
 
-## SW2
+**SW2**
 
 ```bash
 SW2(config)#interface range fa0/1 - 3
@@ -140,10 +140,10 @@ SW2(config-if-range)#shutdown
 
 ---
 
-# Polecenie 8 — Ustaw konfigurację VTP dla SW1 – server, SW2 i SW3 - client. Podaj dowolną nazwę domenyi hasło. Przypisz interfejsy przełączników do odpowiednich sieci VLAN. Ustaw VLAN 99 jako natywny.
+## Polecenie 8 — Ustaw konfigurację VTP dla SW1 – server, SW2 i SW3 - client. Podaj dowolną nazwę domenyi hasło. Przypisz interfejsy przełączników do odpowiednich sieci VLAN. Ustaw VLAN 99 jako natywny.
 
 
-## SW1 (SERVER)
+**SW1 (SERVER)**
 
 ```bash
 SW1(config)#vtp mode server
@@ -157,7 +157,7 @@ SW1(config-if-range)#switchport trunk native vlan 99
 
 ---
 
-## SW2 (CLIENT)
+**SW2 (CLIENT)**
 
 ```bash
 SW2(config)#vtp mode client
@@ -171,7 +171,7 @@ SW2(config-if-range)#switchport trunk native vlan 99
 
 ---
 
-## SW3 (CLIENT)
+**SW3 (CLIENT)**
 
 ```bash
 SW3(config)#vtp mode client
