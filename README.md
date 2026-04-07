@@ -2,8 +2,7 @@
 
 Polecenie 4 - Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
 
-Trzeba to zrobic na urzadzeniach SW1 i SW2 (tego jestem pewien)  i na routerach ale nie jestem pewnien których 
-
+Trzeba to zrobic na urzadzeniach SW1 i SW2 (tego jestem pewien) (wydaje mi sie ze na SW3 NIE TRZEBA) a jezeli chodzi o routery to musze to przemyslec na ktore trzeba 
 ```
 SW1(config)# no cdp run
 SW1(config)# lldp run
