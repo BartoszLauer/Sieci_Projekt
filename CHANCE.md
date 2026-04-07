@@ -26,8 +26,8 @@ Switch(config-if)#switchport mode trunk
 ### 3. Na wszytkich routerach i przelacznikach (r1, r2, r3, sw1, sw2, sw3 wyłaczam cdp i zalaczam lldp)
 
 ```
-NazwaUrzadniea(config) #no cdp run
 NazwaUrzadniea(config)# no cdp run
+NazwaUrzadniea(config)# lldp  run
 ```
 
 **teraz trzeba powyłaczać porty które ida do uzytkowników**
