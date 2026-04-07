@@ -1,4 +1,4 @@
-##Dokumentacja Prac Projektu Sieci LAN
+## Dokumentacja Prac Projektu Sieci LAN
 
 Polecenie 4 - Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
 
@@ -27,13 +27,20 @@ Polecenie 6 - Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT :
 
 Przykład:
 ```
-Urządzenie(config)# enable secret [twoje_hasło]
+Urządzenie(config)# enable secret [haslo]
 Urządzenie(config)# line con 0
-Urządzenie(config-line)# password [twoje_hasło]
+Urządzenie(config-line)# password [haslo]
 Urządzenie(config-line)# login
-Urządzenie(config)# banner motd "Nieautoryzowany dostep zabroniony"
+Urządzenie(config)# banner motd "Nieautoryzowany dostep"
 ```
 
 Polecenie 7 - Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.
 
-
+```
+Urządzenie(config)# interface range fa0/1-4
+Urządzenie(config-if-range)# switchport mode access
+Urządzenie(config-if-range)# switchport port-security
+Urządzenie(config-if-range)# switchport port-security maximum 1
+Urządzenie(config-if-range)# switchport port-security violation shutdown
+Urządzenie(config-if-range)# switchport port-security mac-address sticky
+```
