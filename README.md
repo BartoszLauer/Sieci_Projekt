@@ -33,3 +33,7 @@ Urządzenie(config-line)# password [twoje_hasło]
 Urządzenie(config-line)# login
 Urządzenie(config)# banner motd "Nieautoryzowany dostep zabroniony"
 ```
+
+Polecenie 7 - Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.
+
+
