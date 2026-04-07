@@ -36,7 +36,7 @@ Switch(config-if)#switchport mode trunk
 
 # Polecenie 4 Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
 
-## CDP OFF / LLDP ON (wszystkie urządzenia)
+**CDP OFF / LLDP ON (wszystkie urządzenia)**
 
 ```bash
 NazwaUrzadniea(config)#no cdp run
@@ -45,7 +45,7 @@ NazwaUrzadniea(config)#lldp run
 
 ---
 
-## Wyłączenie LLDP na portach użytkowników
+**Wyłączenie LLDP na portach użytkowników**
 
 ### SW1
 
@@ -75,22 +75,22 @@ R3(config-if)#no lldp receive
 
 # Polecenie 5 — Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast
 
-## Włączenie RSTP
+**Włączenie RSTP**
 
 ```bash
 (config)#spanning-tree mode rapid-pvst 
 ```
 
-## PortFast (porty dostępowe)
+**PortFast (porty dostępowe)**
 
-### SW1
+**SW1**
 
 ```bash
 SW1(config)#interface range fa0/1-4
 SW1(config-if-range)#spanning-tree portfast
 ```
 
-### SW2
+**SW2**
 
 ```bash
 SW2(config)#interface range fa0/1-3
