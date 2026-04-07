@@ -69,3 +69,9 @@ SW2(config)#interface range fa0/1-3
 SW2(config-if-range)#spanning-tree portfast 
 ```
 
+## Polecenie 6 
+Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony
+
+```
+zrobic potem 
+```
