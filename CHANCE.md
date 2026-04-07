@@ -1,5 +1,5 @@
 
-### Naprawa R2 zrobienie Router-on-a-Stick 
+### 1. Naprawa R2 zrobienie Router-on-a-Stick 
 ```
 R2(config)interface Gig0/0
 R2(config-if)no shutdown
@@ -17,7 +17,7 @@ R2(config-subif)encapsulation dot1Q 30
 R2(config-subif)ip address 172.16.30.1 255.255.255.0
 ```
 
-### Trunk na SW3
+### 2. Trunk na SW3
 ```
 Switch(config)#interface Gig0/1
 Switch(config-if)#switchport mode trunk
