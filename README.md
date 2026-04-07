@@ -21,46 +21,16 @@
 | **PCE** | Fa 0 | 172.16.20.11 | 255.255.255.0 | 172.16.20.1 | VLAN 20 |
 | **PCF** | Fa 0 | 172.16.30.11 | 255.255.255.0 | 172.16.30.1 | VLAN 30 |
 
-### 🔹 Polecenie 4  
-**Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam, gdzie jest to konieczne.**
 
-Konfigurację należy wykonać na przełącznikach **SW1** oraz **SW2**  
-(SW3 – chyba nie trzeba nie wiem jak routery nie pamietam jak mowil kowalski).
+## 📑 Spis treści
 
-#### 🔧 Konfiguracja:
-```
-Urządzenie(config)# no cdp run
-Urządzenie(config)# lldp run
-Urządzenie(config)# interface range f0/1-3
-Urządzenie(config-if-range)# no lldp transmit
-Urządzenie(config-if-range)# no lldp receive
-```
+* [🛠️ Aktualna konfiguracja sieci](#️-aktualna-konfiguracja-sieci-co-zostało-zrobione)
 
-### 🔹 Polecenie 5
-**Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast.**
-
-Konfigurację należy wykonać na przełącznikach SW1 oraz SW2.
-
-#### 🔧 Konfiguracja:
-
-Przykład:
-
-```
-Urządzenie(config)# spanning-tree mode rapid-pvst
-i na portach
-Urządzenie(config)# interface range f0/1-3 (porty trzeba dostosowac w zaleznosci od switcha)
-Urządzenie(config-if-range)# spanning-tree portfast
-```
-
-### 🔹 Polecenie 6
-**Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony**
-
-```
-Urządzenie(config)# enable secret [haslo]
-Urządzenie(config)# line con 0
-Urządzenie(config-line)# password [haslo]
-Urządzenie(config-line)# login
-Urządzenie(config)# banner motd "Nieautoryzowany dostep"
-```
-### 🔹 Polecenie 7
-???
+  * [🔧 Naprawa R2 + Router-on-a-Stick](#-naprawa-r2--router-on-a-stick)
+  * [🔌 Trunk na SW3](#-trunk-na-sw3)
+  * [⚙️ Polecenie 4 — CDP / LLDP](#️-polecenie-4--wyłącz-w-sieci-protokół-cdp-uruchom-protokół-lldp-i-wyłącz-go-tam-gdzie-jest-to-konieczne)
+  * [🌳 Polecenie 5 — RSTP + PortFast](#-polecenie-5--uruchom-w-istniejącej-sieci-rstp-w-miejscach-gdzie-jest-to-konieczne-uruchom-portfast)
+  * [🔐 Polecenie 6 — Zabezpieczenia](#-polecenie-6--zabezpiecz-wszystkie-urządzenia-sieciowe-i-wprowadź-baner-modt--nieautoryzowany-dostępzabroniony)
+  * [🔒 Polecenie 7 — Port Security](#-polecenie-7--na-przełączniku-sw1-sw2-uruchom-port-security-nieużywane-interfejsy-zabezpiecz-nawszystkich-przełącznikach)
+  * [🧩 Polecenie 8 — VTP](#-polecenie-8--ustaw-konfigurację-vtp-dla-sw1--server-sw2-i-sw3---client-podaj-dowolną-nazwę-domenyi-hasło-przypisz-interfejsy-przełączników-do-odpowiednich-sieci-vlan-ustaw-vlan-99-jako-natywny)
+  * [📍 Polecenia 9–16](#-polecenia-916)
