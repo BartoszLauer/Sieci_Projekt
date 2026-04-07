@@ -30,5 +30,6 @@
 - [Polecenie 6 — Zabezpieczenia](CHANGES.md#polecenie-6--zabezpiecz-wszystkie-urządzenia-sieciowe-i-wprowadź-baner-modt--nieautoryzowany-dostępzabroniony)
 - [Polecenie 7 — Port Security](CHANGES.md#polecenie-7--na-przełączniku-sw1-sw2-uruchom-port-security-nieużywane-interfejsy-zabezpiecz-nawszystkich-przełącznikach)
 - [Polecenie 8 — VTP](CHANGES.md#polecenie-8--ustaw-konfigurację-vtp-dla-sw1--server-sw2-i-sw3---client-podaj-dowolną-nazwę-domenyi-hasło-przypisz-interfejsy-przełączników-do-odpowiednich-sieci-vlan-ustaw-vlan-99-jako-natywny)
+- [Polecenie 9 - i ](CHANGES.MD#)
 
 
