@@ -1,6 +1,4 @@
-## 📘 Dokumentacja Prac Projektu Sieci LAN
-
----
+## Dokumentacja Prac Projektu Sieci LAN
 
 ### 🔹 Polecenie 4  
 **Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam, gdzie jest to konieczne.**
