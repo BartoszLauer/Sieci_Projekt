@@ -75,3 +75,10 @@ Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowa
 ```
 zrobic potem 
 ```
+
+## Polecenie 7
+## Polecenie 8
+## Polecenie 9
+## Polecenie 10
+## Polecenie 11
+
