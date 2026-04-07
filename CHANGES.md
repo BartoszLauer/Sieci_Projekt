@@ -1,8 +1,8 @@
-# 🛠️ Konfiguracja sieci — krok po kroku
+# 🛠️ Aktulny Konfiguracja sieci (co zostalo zrobione)
 
 ---
 
-## 🔧 1. Naprawa R2 + Router-on-a-Stick
+## 🔧 Naprawa R2 + Router-on-a-Stick
 
 ```bash
 R2(config)#interface Gig0/0
@@ -25,7 +25,7 @@ R2(config-subif)#ip address 172.16.30.1 255.255.255.0
 
 ---
 
-## 🔌 2. Trunk na SW3
+## Trunk na SW3
 
 ```bash
 Switch(config)#interface Gig0/1
@@ -34,9 +34,9 @@ Switch(config-if)#switchport mode trunk
 
 ---
 
-# ⚙️ Polecenie 4 — Konfiguracja globalna
+# Polecenie 4 Wyłącz w sieci protokół CDP. Uruchom protokół LLDP i wyłącz go tam gdzie jest to konieczne.
 
-## 🌐 CDP OFF / LLDP ON (wszystkie urządzenia)
+## CDP OFF / LLDP ON (wszystkie urządzenia)
 
 ```bash
 NazwaUrzadniea(config)#no cdp run
@@ -45,7 +45,7 @@ NazwaUrzadniea(config)#lldp run
 
 ---
 
-## 🚫 Wyłączenie LLDP na portach użytkowników
+## Wyłączenie LLDP na portach użytkowników
 
 ### SW1
 
@@ -73,15 +73,15 @@ R3(config-if)#no lldp receive
 
 ---
 
-# 🌳 Polecenie 5 — RSTP + PortFast
+# Polecenie 5 — Uruchom w istniejącej sieci RSTP. W miejscach gdzie jest to konieczne uruchom PortFast
 
-## 🔁 Włączenie RSTP
+## Włączenie RSTP
 
 ```bash
 (config)#spanning-tree mode rapid-pvst 
 ```
 
-## ⚡ PortFast (porty dostępowe)
+## PortFast (porty dostępowe)
 
 ### SW1
 
@@ -99,18 +99,14 @@ SW2(config-if-range)#spanning-tree portfast
 
 ---
 
-# 🔐 Polecenie 6 — Zabezpieczenia + Baner
+# Polecenie 6 — Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostępzabroniony
 
 ```bash
-! TODO: konfiguracja zabezpieczeń + MOTD
+nic
 ```
 
-📢 **Baner:**
-`Nieautoryzowany dostęp zabroniony`
 
----
-
-# 🔒 Polecenie 7 — Port Security
+# Polecenie 7 — Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz nawszystkich przełącznikach.
 
 ## SW1
 
@@ -144,9 +140,10 @@ SW2(config-if-range)#shutdown
 
 ---
 
-# 🧩 Polecenie 8 — VTP + VLAN + Trunk
+# Polecenie 8 — Ustaw konfigurację VTP dla SW1 – server, SW2 i SW3 - client. Podaj dowolną nazwę domenyi hasło. Przypisz interfejsy przełączników do odpowiednich sieci VLAN. Ustaw VLAN 99 jako natywny.
 
-## 🖥️ SW1 (SERVER)
+
+## SW1 (SERVER)
 
 ```bash
 SW1(config)#vtp mode server
@@ -160,7 +157,7 @@ SW1(config-if-range)#switchport trunk native vlan 99
 
 ---
 
-## 🖥️ SW2 (CLIENT)
+## SW2 (CLIENT)
 
 ```bash
 SW2(config)#vtp mode client
@@ -174,7 +171,7 @@ SW2(config-if-range)#switchport trunk native vlan 99
 
 ---
 
-## 🖥️ SW3 (CLIENT)
+## SW3 (CLIENT)
 
 ```bash
 SW3(config)#vtp mode client
@@ -188,56 +185,47 @@ SW3(config-if-range)#switchport trunk native vlan 99
 
 ---
 
-# 📌 Kolejne polecenia
 
-## 📍 Polecenie 9
-
-```bash
-```
-
-## 📍 Polecenie 10
+## Polecenie 9
 
 ```bash
 ```
 
-## 📍 Polecenie 11
+## Polecenie 10
 
 ```bash
 ```
 
-## 📍 Polecenie 12
+## Polecenie 11
 
 ```bash
 ```
 
-## 📍 Polecenie 13
+## Polecenie 12
 
 ```bash
 ```
 
-## 📍 Polecenie 14
+## Polecenie 13
 
 ```bash
 ```
 
-## 📍 Polecenie 15
+## Polecenie 14
 
 ```bash
 ```
 
-## 📍 Polecenie 16
+## Polecenie 15
+
+```bash
+```
+
+## Polecenie 16
 
 ```bash
 ```
 
 ---
 
-# ✅ Status
 
-✔ Router-on-a-Stick
-✔ Trunki
-✔ RSTP
-✔ Port Security
-✔ VTP
-
-🚧 Do zrobienia: zabezpieczenia + reszta poleceń
