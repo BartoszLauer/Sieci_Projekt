@@ -69,16 +69,40 @@ SW2(config)#interface range fa0/1-3
 SW2(config-if-range)#spanning-tree portfast 
 ```
 
-## Polecenie 6 
-Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony
+## Polecenie 6 Zabezpiecz wszystkie urządzenia sieciowe i wprowadź baner MODT : Nieautoryzowany dostęp zabroniony
 
 ```
 zrobic potem 
 ```
 
-## Polecenie 7
+## Polecenie 7 Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.
+```
+```
 ## Polecenie 8
+```
+```
 ## Polecenie 9
+```
+```
 ## Polecenie 10
+```
+```
 ## Polecenie 11
+```
+```
+## Polecenie 12
+```
+```
+## Polecenie 13
+```
+```
+## Polecenie 14
+```
+```
+## Polecenie 15
+```
+```
+## Polecenie 16
+```
+```
 
