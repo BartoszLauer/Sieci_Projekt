@@ -24,7 +24,5 @@
 
 ## 📑 Spis treści
 
-* [🛠️ Aktualna konfiguracja sieci]()
-
-  * [⚙️ Polecenie 4 — CDP / LLDP](#️-polecenie-4--wyłącz-w-sieci-protokół-cdp-uruchom-protokół-lldp-i-wyłącz-go-tam-gdzie-jest-to-konieczne)
+  * [⚙️ Polecenie 4 — CDP / LLDP](CHANGES.md#polecenie-4-wyłącz-w-sieci-protokół-cdp-uruchom-protokół-lldp-i-wyłącz-go-tam-gdzie-jest-to-konieczne)
 
