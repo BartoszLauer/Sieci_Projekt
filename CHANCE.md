@@ -45,3 +45,9 @@ SW2(config)#interface range fa0/1-3
 SW2(config-if-range)#no lldp transmit 
 SW2(config-if-range)#no lldp receive
 ```
+R3:
+```
+R3(config)#interface gig0/1
+R3(config-if)#no lldp transmit 
+R3(config-if)#no lldp receive 
+```
