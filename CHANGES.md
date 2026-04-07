@@ -18,8 +18,6 @@ NazwaUrzadniea(config)#no cdp run
 NazwaUrzadniea(config)#lldp run
 ```
 
----
-
 **Wyłączenie LLDP na portach użytkowników**
 
 **SW1**
@@ -80,6 +78,7 @@ SW2(config-if-range)#spanning-tree portfast
 nic
 ```
 
+---
 
 ## Polecenie 7 — Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz nawszystkich przełącznikach.
 
@@ -97,7 +96,6 @@ SW1(config)#interface range fa0/5 - 24
 SW1(config-if-range)#shutdown
 ```
 
----
 
 **SW2**
 
@@ -130,7 +128,6 @@ SW1(config-if-range)#switchport mode trunk
 SW1(config-if-range)#switchport trunk native vlan 99
 ```
 
----
 
 **SW2 (CLIENT)**
 
@@ -176,10 +173,12 @@ SW1(config-line)#ip ssh version 2
 
 nie zrobilem jeszcze na routerach tylko na 3 switach (na routerach line vty 0 4)
 
+---
 ## Polecenie 10
 
 ```bash
 ```
+---
 
 ## Polecenie 11 - Na routerze podłączonym do przełącznika uruchom Inter VLAN Routing.
 
@@ -200,10 +199,14 @@ R2(config-subif)#encapsulation dot1Q 30
 R2(config-subif)#ip address 172.16.30.1 255.255.255.0
 ```
 
+---
+
 ## Polecenie 12
 
 ```bash
 ```
+
+---
 
 ## Polecenie 13 - Na zaznaczonym w topologii sieci routerze (DHCP) uruchom serwer DHCP dla wszystkich sieci VLAN
 
