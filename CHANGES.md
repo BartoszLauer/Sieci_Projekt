@@ -1,20 +1,20 @@
 
 ### 1. Naprawa R2 zrobienie Router-on-a-Stick 
 ```
-R2(config)interface Gig0/0
-R2(config-if)no shutdown
+R2(config)#interface Gig0/0
+R2(config-if)#no shutdown
 
-R2(config)interface Gig0/0.10
-R2(config-subif) encapsulation dot1Q 10
-R2(config-subif)ip address 172.16.10.1 255.255.255.0
+R2(config)#interface Gig0/0.10
+R2(config-subif)#encapsulation dot1Q 10
+R2(config-subif)#ip address 172.16.10.1 255.255.255.0
 
-R2(config)interface Gig0/0.20
-R2(config-subif)encapsulation dot1Q 20
-R2(config-subif)ip address 172.16.20.1 255.255.255.0
+R2(config)#interface Gig0/0.20
+R2(config-subif)#encapsulation dot1Q 20
+R2(config-subif)#ip address 172.16.20.1 255.255.255.0
 
-R2(config)interface Gig0/0.30
-R2(config-subif)encapsulation dot1Q 30
-R2(config-subif)ip address 172.16.30.1 255.255.255.0
+R2(config)#interface Gig0/0.30
+R2(config-subif)#encapsulation dot1Q 30
+R2(config-subif)#ip address 172.16.30.1 255.255.255.0
 ```
 
 ### 2. Trunk na SW3
@@ -26,8 +26,8 @@ Switch(config-if)#switchport mode trunk
 ### 3. Na wszytkich routerach i przelacznikach (r1, r2, r3, sw1, sw2, sw3 wyłaczam cdp i zalaczam lldp)
 
 ```
-NazwaUrzadniea(config)# no cdp run
-NazwaUrzadniea(config)# lldp  run
+NazwaUrzadniea(config)#no cdp run
+NazwaUrzadniea(config)#lldp  run
 ```
 
 **teraz trzeba powyłaczać porty które ida do uzytkowników**
@@ -79,6 +79,8 @@ zrobic potem
 ```
 ```
 ## Polecenie 8 Ustaw konfigurację VTP dla SW1 – server, SW2 i SW3 - client. Podaj dowolną nazwę domenyi hasło. Przypisz interfejsy przełączników do odpowiednich sieci VLAN. Ustaw VLAN 99 jako natywny.
+
+**SW1**
 ```
 SW1(config)#vtp mode server
 SW1(config)#vtp domain ajp.domain.pl
@@ -87,7 +89,7 @@ SW1(config)#interface range gig0/1-2
 SW1(config-if-range)#switchport mode trunk 
 SW1(config-if-range)#switchport trunk native vlan 99
 ```
-
+**SW2**
 ```
 SW2(config)#vtp mode client
 SW2(config)#vtp domain ajp.domain.pl
@@ -96,8 +98,14 @@ SW2(config)#interface range gig0/1-2
 SW2(config-if-range)#switchport mode trunk 
 SW2(config-if-range)#switchport trunk native vlan 99
 ```
-
+**SW3**
 ```
+SW3(config)#vtp mode client
+SW3(config)#vtp domain ajp.domain.pl
+SW3(config)#vtp password cisco
+SW3(config)#interface range gig0/1 - 2, fa0/1
+SW3(config-if-range)#switchport mode trunk
+SW3(config-if-range)#switchport trunk native vlan 99
 
 ```
 ## Polecenie 9
