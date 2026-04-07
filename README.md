@@ -42,13 +42,4 @@ Urządzenie(config-line)# login
 Urządzenie(config)# banner motd "Nieautoryzowany dostep"
 ```
 ### 🔹 Polecenie 7
-**Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.**
-
-```
-Urządzenie(config)# interface range (nieuzywane)
-Urządzenie(config-if-range)# switchport mode access
-Urządzenie(config-if-range)# switchport port-security
-Urządzenie(config-if-range)# switchport port-security maximum 1
-Urządzenie(config-if-range)# switchport port-security violation shutdown
-Urządzenie(config-if-range)# switchport port-security mac-address sticky
-```
+???
