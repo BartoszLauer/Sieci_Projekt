@@ -78,8 +78,12 @@ zrobic potem
 ## Polecenie 7 Na przełączniku SW1, SW2 uruchom Port Security. Nieużywane interfejsy zabezpiecz na wszystkich przełącznikach.
 ```
 ```
-## Polecenie 8
+## Polecenie 8 Ustaw konfigurację VTP dla SW1 – server, SW2 i SW3 - client. Podaj dowolną nazwę domenyi hasło. Przypisz interfejsy przełączników do odpowiednich sieci VLAN. Ustaw VLAN 99 jako natywny.
 ```
+SW1(config)#vtp mode server
+SW1(config)#vtp domain ajp.domain.pl
+SW1(config)#vtp password cisco
+
 ```
 ## Polecenie 9
 ```
